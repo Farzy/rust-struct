@@ -1,6 +1,11 @@
 struct Foo {
     quax: i32,
     baz: String,
+    z: Fuz,
+}
+
+struct Fuz {
+    zed: i32,
 }
 
 fn main() {
