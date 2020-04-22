@@ -12,7 +12,8 @@ fn main() {
     let a = Foo {
         quax: 10,
         baz: String::from("Hello, World!"),
+        z: Fuz { zed: 4 },
     };
 
-    println!("Foo: quax: {}, baz: {}", a.quax, a.baz);
+    println!("Foo: quax: {}, baz: {}, z.Fuz.zed: {}", a.quax, a.baz, a.z.zed);
 }
