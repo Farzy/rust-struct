@@ -1,4 +1,4 @@
-struct Foo {
+struct Fooo {
     quax: i32,
     baz: String,
     z: Fuz,
@@ -35,14 +35,27 @@ enum Relationship {
     Other(u32),
 }
 
+struct Foo {
+    a: i32,
+}
+
+struct Bar {
+    b: Foo,
+}
+
+enum Baz {
+    VarA(Foo),
+    VarB(Bar),
+}
+
 fn main() {
-    let a = Foo {
+    let a = Fooo {
         quax: 10,
         baz: String::from("Hello, World!"),
         z: Fuz { zed: 4 },
     };
 
-    println!("Foo: quax: {}, baz: {}, z.Fuz.zed: {}", a.quax, a.baz, a.z.zed);
+    println!("Fooo: quax: {}, baz: {}, z.Fuz.zed: {}", a.quax, a.baz, a.z.zed);
 
     let p1 = Point2D { x: 10.0, y: 4.0 };
     let p2 = Point2D { x: -2.0, y: 30.5 };
@@ -52,5 +65,5 @@ fn main() {
     let my_pet = Animal::Dog;
     let other_pet = Animal::Cat;
 
-    assert!(my_pet == other_pet);
+    assert!(my_pet != other_pet);
 }
