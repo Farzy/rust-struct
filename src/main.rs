@@ -20,6 +20,21 @@ fn add_points(a: Point2D, b: Point2D) -> Point2D {
     }
 }
 
+#[derive(PartialEq)]
+enum Animal {
+    Dog,
+    Cat,
+}
+
+enum Relationship {
+    Father,
+    Mother,
+    Daughter,
+    Son,
+    Sibling,
+    Other(u32),
+}
+
 fn main() {
     let a = Foo {
         quax: 10,
@@ -33,4 +48,9 @@ fn main() {
     let p2 = Point2D { x: -2.0, y: 30.5 };
 
     println!("p1 + p2 x: {}", add_points(p1, p2).x);
+
+    let my_pet = Animal::Dog;
+    let other_pet = Animal::Cat;
+
+    assert!(my_pet == other_pet);
 }
