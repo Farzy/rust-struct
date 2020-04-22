@@ -6,7 +6,7 @@ struct Foo {
 fn main() {
     let a = Foo {
         quax: 10,
-        baz: String::new(),
+        baz: String::from("Hello, World!"),
     };
 
     println!("Foo: quax: {}, baz: {}", a.quax, a.baz);
