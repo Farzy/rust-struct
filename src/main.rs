@@ -8,6 +8,18 @@ struct Fuz {
     zed: i32,
 }
 
+struct Point2D {
+    x: f64,
+    y: f64,
+}
+
+fn add_points(a: Point2D, b: Point2D) -> Point2D {
+    Point2D {
+        x: a.x + b.x,
+        y: a.y + b.y,
+    }
+}
+
 fn main() {
     let a = Foo {
         quax: 10,
@@ -16,4 +28,9 @@ fn main() {
     };
 
     println!("Foo: quax: {}, baz: {}, z.Fuz.zed: {}", a.quax, a.baz, a.z.zed);
+
+    let p1 = Point2D { x: 10.0, y: 4.0 };
+    let p2 = Point2D { x: -2.0, y: 30.5 };
+
+    println!("p1 + p2 x: {}", add_points(p1, p2).x);
 }
