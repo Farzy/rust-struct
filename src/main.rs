@@ -48,6 +48,31 @@ enum Baz {
     VarB(Bar),
 }
 
+//--------------------------------------------
+enum Action {
+    Drive,
+    Turn(Direction),
+    Stop,
+    Pickup,
+}
+
+enum Direction {
+    Left,
+    Right,
+}
+
+fn print_action(a: Action) {
+    match a {
+        Action::Drive => println!("Drive forward!"),
+        Action::Turn(direction) => match direction {
+            Direction::Left => println!("Turn left!"),
+            Direction::Right => println!("Turn Right!"),
+        },
+        Action::Pickup => println!("Pick up object!"),
+        Action::Stop => println!("Stop!"),
+    }
+}
+
 fn main() {
     let a = Fooo {
         quax: 10,
@@ -66,4 +91,20 @@ fn main() {
     let other_pet = Animal::Cat;
 
     assert!(my_pet != other_pet);
+
+    //-----------------------------------------
+    let program = vec![
+        Action::Drive,
+        Action::Turn(Direction::Left),
+        Action::Drive,
+        Action::Pickup,
+        Action::Turn(Direction::Left),
+        Action::Drive,
+        Action::Turn(Direction::Right),
+        Action::Drive,
+        Action::Stop,
+    ];
+    for action in program {
+        print_action(action);
+    }
 }
