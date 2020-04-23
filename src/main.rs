@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 struct Fooo {
     quax: i32,
     baz: String,
